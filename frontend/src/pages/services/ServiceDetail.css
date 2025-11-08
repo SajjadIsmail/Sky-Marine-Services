@@ -1,0 +1,283 @@
+.service-detail-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.service-hero {
+  height: 450px;
+  background-image: url('https://holyangelmarineservices.com/wp-content/uploads/2024/03/service-crew.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(57, 213, 232, 0.9), rgba(11, 11, 140, 0.9));
+}
+
+.service-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.service-hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.service-hero-content p {
+  font-size: 1.5rem;
+  opacity: 0.95;
+}
+
+/* Overview */
+.service-overview {
+  background-color: #F8FBFF;
+}
+
+.overview-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.overview-content h2 {
+  font-size: 2.5rem;
+  color: #39D5E8;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.overview-content p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Features */
+.service-features {
+  background: linear-gradient(to bottom, #ffffff, #E6F2FF);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border-top: 4px solid #39D5E8;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(57, 213, 232, 0.2);
+  border-top-color: #8FA9E5;
+}
+
+.feature-icon {
+  color: #39D5E8;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: #39D5E8;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Services Offered */
+.services-offered {
+  background-color: #F8FBFF;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.service-item {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #39D5E8;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 25px rgba(57, 213, 232, 0.2);
+  border-left-color: #8FA9E5;
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  color: #39D5E8;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.service-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-item li {
+  padding: 10px 0;
+  color: #666;
+  font-size: 1.05rem;
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
+  padding-left: 25px;
+}
+
+.service-item li:last-child {
+  border-bottom: none;
+}
+
+.service-item li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #39D5E8;
+  font-weight: 700;
+}
+
+/* CTA */
+.service-cta {
+  background: linear-gradient(135deg, #39D5E8 0%, #0B0B8C 100%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZG90cyIgeD0iMCIgeT0iMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNkb3RzKSIvPjwvc3ZnPg==');
+  opacity: 0.5;
+}
+
+.service-cta-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.service-cta-content h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.service-cta-content p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.service-cta-content .btn-primary {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  background-color: white;
+  color: #39D5E8;
+}
+
+.service-cta-content .btn-primary:hover {
+  background-color: #8FA9E5;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .service-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .service-hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-hero {
+    height: 350px;
+  }
+  
+  .service-hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .service-hero-content p {
+    font-size: 1rem;
+  }
+  
+  .overview-content h2 {
+    font-size: 2rem;
+  }
+  
+  .overview-content p {
+    font-size: 1rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .service-cta-content p {
+    font-size: 1rem;
+  }
+}

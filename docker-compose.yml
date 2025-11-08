@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - "27017:27017" # optional, for local access
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      - MONGO_URL=mongodb://mongo:27017
+    depends_on:
+      - mongo
+    ports:
+      - "1225:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # Pass environment variables for React build
+        REACT_APP_CONTACT_PROVIDER: backend
+        REACT_APP_API_URL: /api
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "2002:80"
+
+volumes:
+  mongo_data:
+    driver: local

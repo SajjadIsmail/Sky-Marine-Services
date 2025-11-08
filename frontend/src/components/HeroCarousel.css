@@ -1,0 +1,169 @@
+.hero-carousel {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-video,
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(57, 213, 232, 0.3),
+    rgba(11, 11, 140, 0.7)
+  );
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: #39D5E8;
+}
+
+.carousel-control:hover {
+  background-color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control.prev {
+  left: 30px;
+}
+
+.carousel-control.next {
+  right: 30px;
+}
+
+.carousel-play-pause {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: #39D5E8;
+}
+
+.carousel-play-pause:hover {
+  background-color: white;
+  transform: scale(1.1);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #8FA9E5;
+  width: 30px;
+  border-radius: 6px;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .hero-carousel {
+    height: 400px;
+  }
+  
+  .carousel-control {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .carousel-control.prev {
+    left: 15px;
+  }
+  
+  .carousel-control.next {
+    right: 15px;
+  }
+  
+  .carousel-play-pause {
+    width: 35px;
+    height: 35px;
+    bottom: 20px;
+    left: 20px;
+  }
+  
+  .carousel-indicators {
+    bottom: 20px;
+  }
+}

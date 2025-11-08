@@ -1,0 +1,221 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(6, 27, 87, 0.95), rgba(7, 108, 177, 0.9));
+  backdrop-filter: blur(16px);
+  transition: all 0.35s ease;
+  border-bottom: 1px solid rgba(111, 202, 255, 0.25);
+  box-shadow: 0 18px 50px rgba(5, 20, 60, 0.35);
+}
+
+.header.scrolled {
+  background: linear-gradient(135deg, rgba(5, 19, 70, 0.95), rgba(7, 78, 150, 0.95));
+  box-shadow: 0 14px 40px rgba(4, 18, 52, 0.45);
+}
+
+.main-header {
+  background: transparent;
+  padding: 20px 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 90px;
+  width: auto;
+  max-width: 180px;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+.brand-title {
+  flex-shrink: 0;
+}
+
+.brand-title h1 {
+  background: linear-gradient(135deg, #a8efff 0%, #4cc9f0 45%, #d0e8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-menu a,
+.nav-menu span {
+  color: #e6f7ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  border-radius: 8px;
+}
+
+.nav-menu a:hover,
+.nav-menu span:hover,
+.nav-menu a.active {
+  color: #0b1633;
+  background: rgba(233, 248, 255, 0.9);
+}
+
+.nav-menu .nav-link::after {
+  display: none;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: linear-gradient(135deg, #00c2ff 0%, #6b9bff 100%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 70%;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: linear-gradient(150deg, rgba(7, 34, 96, 0.92), rgba(7, 117, 182, 0.9));
+  backdrop-filter: blur(14px);
+  min-width: 220px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  padding: 8px;
+  border: 1px solid rgba(123, 208, 255, 0.25);
+  animation: dropdownFade 0.3s ease;
+}
+
+.verification-dropdown {
+  min-width: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu a {
+  display: block;
+  color: #e6f7ff;
+  padding: 12px 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  margin: 2px 0;
+}
+
+.dropdown-menu a:hover {
+  background: linear-gradient(135deg, rgba(230, 247, 255, 0.85), rgba(196, 227, 255, 0.75));
+  color: #0b1633;
+  padding-left: 20px;
+}
+
+.dropdown-menu a::after {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .brand-title h1 {
+    font-size: 1.4rem;
+  }
+  
+  .nav-menu {
+    gap: 15px;
+  }
+  
+  .nav-menu a,
+  .nav-menu span {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .brand-title h1 {
+    font-size: 1.2rem;
+  }
+  
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .nav-menu a,
+  .nav-menu span {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+}
