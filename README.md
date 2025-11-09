@@ -1,4 +1,4 @@
-# Emergent Marine Services - Full Stack Application
+# Sky Marine Services - Full Stack Application
 
 ## 🎯 Quick Start (Development)
 
